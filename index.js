@@ -35,9 +35,11 @@ const transformRecord = record => Object.entries(record)
     if (!value) {
       return output;
     }
+
     output[name] = {
-      [type]: ["L","M","NS","SS","BS"].includes(type) ? JSON.parse(value) : value,
+      [type]: ["L","M","NS","SS","BS", "BOOL"].includes(type) ? JSON.parse(value) : value,
     };
+
     return output;
   }, {});
 
